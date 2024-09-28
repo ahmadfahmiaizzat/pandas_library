@@ -8,18 +8,20 @@ Summary Data: A separate DataFrame is created for the calculated statistics and 
 Excel File: The resulting DataFrame is saved as an Excel file called students_marks_and_grades.xlsx.
 
        Name                 Marks          Grade
-0     Alice                   85              A
-1       Bob                   78              B
-2   Charlie                   92              A
-3     David                   67              C
-4       Eva                   55              D
-5     Frank                   45              F
-6     Grace                   73              B
-7    Hannah                   88              A
-8       Ivy                   61              C
-9      Jack                   52              D
-10  Average                69.60              
-11  Standard Deviation      15.63              
-12  Maximum                92.00              
-13  Minimum                45.00              
-14  Range                  47.00              
+       0     Alice                   85              A
+       1       Bob                   78              B
+       2   Charlie                   92              A
+       3     David                   67              C
+       4       Eva                   55              D
+       5     Frank                   45              F
+       6     Grace                   73              B
+       7    Hannah                   88              A
+       8       Ivy                   61              C
+       9      Jack                   52              D
+       10  Average                69.60              
+       11  Standard Deviation      15.63              
+       12  Maximum                92.00              
+       13  Minimum                45.00              
+       14  Range                  47.00              
+Excel Output:
+The program will generate an Excel file named students_marks_and_grades.xlsx with the same content as shown in the DataFrame above. The file contains the students' marks, grades, and summary statistics (average, standard deviation, maximum, minimum, and range). You can open this Excel file for further analysis.
