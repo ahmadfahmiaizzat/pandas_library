@@ -1,0 +1,55 @@
+import pandas as pd
+import math
+ 
+# Function to calculate the grade based on marks
+def calculate_grade(marks):
+    if marks >= 80:
+        return 'A'
+    elif marks >= 70:
+        return 'B'
+    elif marks >= 60:
+        return 'C'
+    elif marks >= 50:
+        return 'D'
+    else:
+        return 'F'
+ 
+# Create a dictionary of student names and their marks
+students_data = {
+    "Name": ["Alice", "Bob", "Charlie", "David", "Eva", "Frank", "Grace", "Hannah", "Ivy", "Jack"],
+    "Marks": [85, 78, 92, 67, 55, 45, 73, 88, 61, 52]
+}
+ 
+# Create a DataFrame from the dictionary
+df = pd.DataFrame(students_data)
+ 
+# Part (a) - Calculate their grades
+df['Grade'] = df['Marks'].apply(calculate_grade)
+ 
+# Part (b) - Calculate average and standard deviation
+average = df['Marks'].mean()
+std_dev = df['Marks'].std()
+ 
+# Part (c) - Calculate maximum, minimum, and range
+maximum = df['Marks'].max()
+minimum = df['Marks'].min()
+range_value = maximum - minimum
+ 
+# Add summary statistics to the DataFrame
+summary_data = {
+    'Name': ['Average', 'Standard Deviation', 'Maximum', 'Minimum', 'Range'],
+    'Marks': [average, std_dev, maximum, minimum, range_value],
+    'Grade': [''] * 5  # No grades for the summary statistics
+}
+ 
+# Convert the summary dictionary to a DataFrame
+summary_df = pd.DataFrame(summary_data)
+ 
+# Append the summary statistics to the original DataFrame
+final_df = pd.concat([df, summary_df], ignore_index=True)
+ 
+# Save the DataFrame to an Excel file
+final_df.to_excel('students_marks_and_grades.xlsx', index=False)
+ 
+# Print final DataFrame for reference
+print(final_df)
